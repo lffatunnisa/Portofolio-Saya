@@ -3,10 +3,9 @@ html {
 }
 
 body {
-    font-family: cursive; 
-    background-image: url('—Pngtree—watercolor\ outer\ space\ galaxy\ background_1434418.png');
+    font-family: cursive;
+    background-image: url(—Pngtree—watercolor\ outer\ space\ galaxy\ background_1434418.png);
     background-size: cover;
-    background-repeat: no-repeat;
 }
 
 /*NAVBAR*/
@@ -17,7 +16,6 @@ header {
     width: 100%;
     height: 300px;
     display: flex;
-    background-size: cover;
     justify-content: space-between;
 }
 header a {
@@ -33,7 +31,7 @@ header a {
     font-size: 15px;
     font-weight: 1000;
     padding: 0 17px;
-    line-height: 100px;
+    line-height: 70px;
     background-color: rgba(245, 245, 220, 0.107);
     border-radius: 10px;
 }
@@ -41,38 +39,22 @@ header a {
     color: violet;
 }
 
-/*HOME*/
-#home {
-    display:flex;
-    height: 100vh;
-    align-items: center;
-    padding: 0 50px;
-    justify-content: space-evenly;
-}
-#home div {
-    max-width: 50%;
-    color: white;
-    border-radius: 15px;
-    padding: 0 0 0 10px;
-}
-#home div h1{
-    font-size: 50px;
-    line-height: 30px;
-}
-
-/*ABOUT*/
-#about {
+/*HOME & ABOUT*/
+#home, #about{
     display: flex;
     height: 100vh;
     align-items: center;
     padding: 0 50px;
     justify-content: space-evenly;
 }
-#about div {
+#home div, #about div{
     max-width: 50%;
     color: white;
-    border-radius: 15px;
     padding: 0 0 0 10px;
+}
+#home div h1 {
+    font-size: 50px;
+    line-height: 30px;
 }
 #about div p a {
     color: aquamarine;
@@ -103,7 +85,6 @@ header a {
 #contact div {
     max-width: 50%;
     color: white;
-    border-radius: 15px;
     padding: 0 0 0 10px;
 }
 #contact a {
