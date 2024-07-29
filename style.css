@@ -1,97 +1,313 @@
-html {
-    scroll-behavior: smooth;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #a855f7;
+  --primary-color-dark: #9333ea;
+  --secondary-color: #ca8a04;
+  --text-dark: #ffffff;
+  --text-light: #cad1df;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
-    font-family: cursive;
-    background-image: url(—Pngtree—watercolor\ outer\ space\ galaxy\ background_1434418.png);
-    background-size: cover;
+  font-family: "Poppins", sans-serif;
+  background-image: url(galaxy\ background.png);
+  background-size: cover;
 }
 
-/*NAVBAR*/
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+nav {
+  background-color:#250e3a75;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.nav_content {
+  max-width: var(--max-width);
+  padding: 1.2rem 1rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .hamburger {
+  display: none;
+  cursor: pointer;
+}
+nav input {
+  display: none;
+}
+nav .hamburger i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+  align-items: center;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+#about, #contact {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+#home {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  display: grid;
+  text-align: center;
+}
+#project {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem;
+  display: block;
+  text-align: center;
+}
+
+.logo {
+  position: fixed;
+  top: 3.5rem;
+  left: 85%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action_btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.action_btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hire_me {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.hire_me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(25rem, 90%);
+  border-radius: 100%;
+}
+
+/* PROJECT */
+#card1 {
+  float: left;
+  left: 100px;
+}
+#card2 {
+  float: right;
+  right: 100px;
+}
+#card1, #card2 {
+  position: relative;
+  max-width: 300px;
+  height: 150px;
+  margin: 160px 0 0;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s ease-in-out;
+}
+#card1:hover, #card2:hover {
+  margin: 120px 0 0;
+}
+.cimg {
+  position: relative;
+  width: 270px;
+  max-height: 200px;
+  top: -70px;
+  z-index: 1;
+}
+.cimg img {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  transition: 0.4s ease-in-out;  
+}
+.cimg:hover img {
+  height: 200px;
+  width: 200px;
+}
+
+.info {
+  position: relative;
+  margin-top: -150px;
+  padding: 10px 15px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.1s ease-in-out;
+}
+#card1:hover .info, #card2:hover .info {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -70px;
+  top: 0;
+}
+.description a {
+  color: var(--primary-color);
+}
+.description a:hover {
+  color: var(--primary-color-dark);
+}
+
+/* CONTACT */
+.input-box {
+  height: 50px;
+  width: 100%;
+  margin: 12px 0;
+}
+.input-box input,
+.input-box textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: var(--extra-light);
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.message-box {
+  min-height: 110px;
+}
+.input-box textarea {
+  padding-top: 6px;
+}
+
+@media (width < 750px) {
+  nav .hamburger {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
     width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-}
-header a {
-    padding: 70px;
-}
-#navbar li {
-    list-style: none;
-    display: inline-block;
-}
-#navbar li a {
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-    font-weight: 1000;
-    padding: 0 17px;
-    line-height: 70px;
-    background-color: rgba(245, 245, 220, 0.107);
-    border-radius: 10px;
-}
-#navbar li a:hover {
-    color: violet;
-}
+    left: -100%;
+    top: 73px;
+    background-color:#250e3a75;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 30px;
+  }
 
-/*HOME & ABOUT*/
-#home, #about{
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    padding: 0 50px;
-    justify-content: space-evenly;
-}
-#home div, #about div{
-    max-width: 50%;
-    color: white;
-    padding: 0 0 0 10px;
-}
-#home div h1 {
-    font-size: 50px;
-    line-height: 30px;
-}
-#about div p a {
-    color: aquamarine;
-}
-#about div p a:hover {
-    color: violet;
-}
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+  ul li {
+    width: 100%;
+  }
 
-/*KELILING*/
-#keliling {
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    padding: 0 50px;
-}
-#keliling video {
-    max-width: 80%;
-}
+  ul li a {
+    font-size: 1rem;
+  }
 
-/*CONTACT*/
-#contact {
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    padding: 0 50px;
-    justify-content: space-between;
-}
-#contact div {
-    max-width: 50%;
-    color: white;
-    padding: 0 0 0 10px;
-}
-#contact a {
-    position: relative;
-    margin-top: 120px;
-    margin-right: -60px;
-}
-#kontak li {
-    list-style: none;
+  #about, #project, #contact {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action_btns {
+    margin: auto;
+  }
+
+  .logo {
+    position: absolute;
+    left: 65%;
+  }
 }
